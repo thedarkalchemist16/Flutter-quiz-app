@@ -1,6 +1,6 @@
 # starting_with_flutter
 
-A new Flutter project.
+A new Flutter project. First project that i have started to develop with the help of Flutter framework using Dart language
 
 ## Getting Started
 
