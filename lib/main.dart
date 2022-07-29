@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:starting_with_flutter/question.dart';
 
 class MyFirstApp extends StatefulWidget {
   @override
@@ -32,7 +33,7 @@ class MyAppState extends State<MyFirstApp> {
       appBar: AppBar(title: Text('FIRST APP')),
       body: Column(
         children: [
-          Text(questions[questionIndex]),
+          Question(questions[questionIndex]),
           ElevatedButton(
             onPressed: answers,
             child: Text("Answer 1"),
