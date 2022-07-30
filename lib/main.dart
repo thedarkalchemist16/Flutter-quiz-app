@@ -32,6 +32,7 @@ class MyAppState extends State<MyFirstApp> {
         home: Scaffold(
       appBar: AppBar(title: Text('FIRST APP')),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Question(questions[questionIndex]),
           ElevatedButton(

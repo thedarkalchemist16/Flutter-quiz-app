@@ -1,6 +1,7 @@
 // ignore_for_file: sort_child_properties_last, prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Question extends StatelessWidget {
   final String questionText;
@@ -23,6 +24,7 @@ class Question extends StatelessWidget {
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           border: Border.all(),
+          color: Colors.teal,
         ));
   }
 }
