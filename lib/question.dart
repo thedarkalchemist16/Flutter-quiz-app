@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, duplicate_ignore
+
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
@@ -7,6 +9,20 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(questionText);
+    return Container(
+        child: Text(
+          questionText,
+          textAlign: TextAlign.center,
+          // ignore: prefer_const_constructors
+          style: TextStyle(
+            fontSize: 18,
+          ),
+        ),
+        width: double.infinity,
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          border: Border.all(),
+        ));
   }
 }
