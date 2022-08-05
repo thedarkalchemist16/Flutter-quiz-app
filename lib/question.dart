@@ -11,20 +11,16 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Text(
-          questionText,
-          textAlign: TextAlign.center,
-          // ignore: prefer_const_constructors
-          style: TextStyle(
-            fontSize: 18,
-          ),
-        ),
-        width: double.infinity,
-        margin: EdgeInsets.all(10),
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          border: Border.all(),
-          color: Colors.teal,
-        ));
+      child: Text(
+        questionText,
+        textAlign: TextAlign.center,
+        // ignore: prefer_const_constructors
+        style:
+            TextStyle(fontSize: 18, color: Color.fromARGB(156, 40, 209, 156)),
+      ),
+      width: double.infinity,
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
+    );
   }
 }
