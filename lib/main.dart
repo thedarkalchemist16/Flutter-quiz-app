@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:starting_with_flutter/question.dart';
+import 'package:starting_with_flutter/answer.dart';
 
 class MyFirstApp extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class MyAppState extends State<MyFirstApp> {
   void answers() {
     setState(() {
       questionIndex += 1;
+      if (questionIndex > 3) questionIndex = 0;
     });
     print('ANSWER SELECTED');
   }
@@ -32,21 +34,11 @@ class MyAppState extends State<MyFirstApp> {
         home: Scaffold(
       appBar: AppBar(title: Text('FIRST APP')),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Question(questions[questionIndex]),
-          ElevatedButton(
-            onPressed: answers,
-            child: Text("Answer 1"),
-          ),
-          ElevatedButton(
-            onPressed: answers,
-            child: Text("Answer 2"),
-          ),
-          ElevatedButton(
-            onPressed: answers,
-            child: Text("Answer 3"),
-          ),
+          Answer(answers),
+          Answer(answers),
+          Answer(answers),
         ],
       ),
     ));
