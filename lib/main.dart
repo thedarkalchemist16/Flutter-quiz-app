@@ -18,7 +18,7 @@ class MyAppState extends State<MyFirstApp> {
   void answers() {
     setState(() {
       questionIndex += 1;
-      if (questionIndex > 3) questionIndex = 0;
+      if (questionIndex > 4) questionIndex = 0;
     });
     print('ANSWER SELECTED');
   }
@@ -40,6 +40,10 @@ class MyAppState extends State<MyFirstApp> {
       {
         'questionText': 'What is your favorite city',
         'answer': ['Paris', 'London', 'New York', 'Vienna']
+      },
+      {
+        'questionText': 'What is your favorite Game of Thrones house',
+        'answer': ['Stark', 'Lannister', 'Baratheon', 'Targaryen', 'Tully']
       }
     ];
     return MaterialApp(
@@ -48,10 +52,9 @@ class MyAppState extends State<MyFirstApp> {
       body: Column(
         children: [
           Question(questions[questionIndex]["questionText"] as String),
-          Answer(questions[questionIndex]['answer'] as List<String>)
-              .map((answer) {
+          ...(questions[questionIndex]['answer'] as List<String>).map((answer) {
             return Answer(answers, answer);
-          }),
+          }).toList(),
         ],
       ),
     ));
