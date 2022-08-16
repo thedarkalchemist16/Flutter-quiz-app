@@ -66,6 +66,13 @@ class MyAppState extends State<MyFirstApp> {
   ];
   var questionIndex = 0;
   var totalScore = 0;
+
+  // ignore: non_constant_identifier_names
+  void QuizReset() {
+    questionIndex = 0;
+    totalScore = 0;
+  }
+
   void answers(int score) {
     totalScore += score;
     setState(() {
@@ -84,7 +91,7 @@ class MyAppState extends State<MyFirstApp> {
               answers,
               questionIndex,
             )
-          : Result(totalScore),
+          : Result(totalScore, QuizReset),
     ));
   }
 }
