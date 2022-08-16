@@ -15,8 +15,7 @@ class Question extends StatelessWidget {
         questionText,
         textAlign: TextAlign.center,
         // ignore: prefer_const_constructors
-        style:
-            TextStyle(fontSize: 18, color: Color.fromARGB(156, 40, 209, 156)),
+        style: TextStyle(fontSize: 18, color: Colors.black87),
       ),
       width: double.infinity,
       margin: EdgeInsets.all(10),
