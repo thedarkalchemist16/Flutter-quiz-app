@@ -18,7 +18,6 @@ class MyAppState extends State<MyFirstApp> {
   void answers() {
     setState(() {
       questionIndex += 1;
-      if (questionIndex > 4) questionIndex = 0;
     });
     print('ANSWER SELECTED');
   }
@@ -49,14 +48,17 @@ class MyAppState extends State<MyFirstApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(title: Text('FIRST APP')),
-      body: Column(
-        children: [
-          Question(questions[questionIndex]["questionText"] as String),
-          ...(questions[questionIndex]['answer'] as List<String>).map((answer) {
-            return Answer(answers, answer);
-          }).toList(),
-        ],
-      ),
+      body: questionIndex < questions.length
+          ? Column(
+              children: [
+                Question(questions[questionIndex]["questionText"] as String),
+                ...(questions[questionIndex]['answer'] as List<String>)
+                    .map((answer) {
+                  return Answer(answers, answer);
+                }).toList(),
+              ],
+            )
+          : Center(child: Text("You did it")),
     ));
   }
 }
