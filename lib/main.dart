@@ -69,8 +69,10 @@ class MyAppState extends State<MyFirstApp> {
 
   // ignore: non_constant_identifier_names
   void QuizReset() {
-    questionIndex = 0;
-    totalScore = 0;
+    setState(() {
+      questionIndex = 0;
+      totalScore = 0;
+    });
   }
 
   void answers(int score) {
